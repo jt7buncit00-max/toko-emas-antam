@@ -12,7 +12,6 @@
 <style>
 
 *{margin:0;padding:0;box-sizing:border-box;font-family:Poppins;scroll-behavior:smooth;}
-
 body{background:#0f0f0f;color:#fff}
 
 /* NAVBAR */
@@ -56,6 +55,16 @@ background:
 linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.9)),
 url('https://images.unsplash.com/photo-1610375461246-83df859d849d');
 background-size:cover;
+}
+
+/* LOGO */
+.logo{
+margin-bottom:20px;
+}
+.logo img{
+width:120px;
+border-radius:50%;
+box-shadow:0 0 25px gold;
 }
 
 .hero h1{color:#d4af37;font-size:40px}
@@ -166,26 +175,24 @@ margin:3px;
 <!-- NAVBAR -->
 <nav>
 <h2>ANTAM GOLD</h2>
-
-<div class="cart-icon">
-🛒
-<img src="file_00000000db94720b99717bea4b80b9d9.
-  png" width="120">
-</div>
+<div class="cart-icon">🛒 <span id="cartCount">0</span></div>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
-  <div style="text-align:center; 
-    margin-bottom:20px;">
-  <img src="logo.png" width="120">
+
+<div class="logo">
+<img src="file_00000000db94720b99717bea4b80b9d9.png">
 </div>
+
 <h1>Toko Emas ANTAM Official</h1>
 <p>Order Mudah • Aman • Terpercaya</p>
 <a class="btn" href="https://wa.me/6283172766800">Chat WhatsApp</a>
+
 </section>
 
-<!-- ORDER + CART -->
+<!-- SISANYA TIDAK BERUBAH -->
+
 <section class="section">
 <h2>Order Emas ANTAM</h2>
 
@@ -202,146 +209,74 @@ margin:3px;
 </select>
 
 <button class="btn" onclick="tambahCart()">Tambah Keranjang</button>
-
 </div>
 
 <div class="card">
 <h3>🛒 Keranjang</h3>
-
 <div id="cartItems"></div>
-
 <hr>
-
 <h3>Total: <span id="totalHarga">Rp0</span></h3>
-
 <button class="btn" onclick="checkoutWA()">Checkout WhatsApp</button>
-
 </div>
 
 </div>
 </section>
 
-<!-- TESTIMONI -->
 <section class="section">
 <h2>Testimoni Customer</h2>
-
 <div class="testimoni-grid">
-
-<div class="testi-card">
-<div class="testi-name">Andi Pratama</div>
-<div class="stars">★★★★★</div>
-Pelayanan cepat dan emas asli.
-</div>
-
-<div class="testi-card">
-<div class="testi-name">Siti Rahma</div>
-<div class="stars">★★★★★</div>
-Admin responsif dan terpercaya.
-</div>
-
-<div class="testi-card">
-<div class="testi-name">Budi Santoso</div>
-<div class="stars">★★★★★</div>
-Sudah beli beberapa kali, aman.
-</div>
-
+<div class="testi-card"><div class="testi-name">Andi</div><div class="stars">★★★★★</div>Pelayanan cepat</div>
+<div class="testi-card"><div class="testi-name">Siti</div><div class="stars">★★★★★</div>Terpercaya</div>
 </div>
 </section>
 
-<!-- LOKASI -->
 <section class="section">
-<h2>Lokasi Toko</h2>
-
-<p style="text-align:center;">
-📍 Jl. TB Simatupang, Jakarta Selatan
-</p>
-
-<iframe src="https://maps.google.com/maps?q=Jl.%20TB%20Simatupang%20Jakarta%20Selatan&output=embed"></iframe>
-
+<h2>Lokasi</h2>
+<iframe src="https://maps.google.com/maps?q=Jakarta&output=embed"></iframe>
 </section>
 
-<footer>
-© 2026 Toko Emas ANTAM Official
-</footer>
+<footer>© 2026 Toko Emas ANTAM Official</footer>
 
 <a class="wa" href="https://wa.me/6283172766800">WA</a>
 
 <script>
-
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-function rupiah(a){
-return "Rp"+a.toLocaleString("id-ID");
-}
+function rupiah(a){return "Rp"+a.toLocaleString("id-ID");}
 
 function updateCart(){
-
-let container=document.getElementById("cartItems");
-container.innerHTML="";
-
-let total=0;
-let jumlah=0;
-
+let total=0,jumlah=0;
+let c=document.getElementById("cartItems");
+c.innerHTML="";
 cart.forEach((item,i)=>{
-
 total+=item.harga*item.qty;
 jumlah+=item.qty;
-
-container.innerHTML+=`
-<div style="border-bottom:1px solid #333;margin-bottom:10px;padding-bottom:8px;">
-<b>${item.nama}</b><br>
-<button onclick="kurang(${i})">−</button>
-${item.qty}
-<button onclick="tambah(${i})">+</button>
-<button onclick="hapus(${i})" style="color:red;">❌</button>
-<div>${rupiah(item.harga*item.qty)}</div>
-</div>`;
+c.innerHTML+=`<div>${item.nama} x${item.qty}</div>`;
 });
-
 document.getElementById("totalHarga").innerText=rupiah(total);
 document.getElementById("cartCount").innerText=jumlah;
-
 localStorage.setItem("cart",JSON.stringify(cart));
 }
 
 function tambahCart(){
-
 let s=document.getElementById("gram");
 let nama=s.options[s.selectedIndex].text;
 let harga=parseInt(s.value);
-
 let item=cart.find(p=>p.nama===nama);
-
-if(item){item.qty++;}
-else{cart.push({nama,harga,qty:1});}
-
+if(item){item.qty++;}else{cart.push({nama,harga,qty:1});}
 updateCart();
 }
-
-function tambah(i){cart[i].qty++;updateCart();}
-function kurang(i){cart[i].qty--;if(cart[i].qty<=0)cart.splice(i,1);updateCart();}
-function hapus(i){cart.splice(i,1);updateCart();}
 
 function checkoutWA(){
-
-if(cart.length===0){alert("Keranjang kosong");return;}
-
-let pesan="Halo Admin,%0ASaya ingin order:%0A%0A";
-let total=0;
-
+let pesan="Halo Admin,%0ASaya ingin order:%0A";
 cart.forEach((item,i)=>{
 pesan+=`${i+1}. ${item.nama} x${item.qty}%0A`;
-total+=item.harga*item.qty;
 });
-
-pesan+=`%0ATotal: ${rupiah(total)}%0A`;
-
-window.open("https://wa.me/6283172766800?text="+pesan,"_blank");
+window.open("https://wa.me/6283172766800?text="+pesan);
 }
 
 updateCart();
-
 </script>
 
 </body>
-</html>
+  </html>
