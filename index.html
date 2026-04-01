@@ -5,38 +5,25 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Toko Emas ANTAM Official | Jual Beli Emas Batangan</title>
+<title>Toko Emas ANTAM Official</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
-
-*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins;scroll-behavior:smooth;}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins;}
 body{background:#0f0f0f;color:#fff}
 
-/* NAVBAR */
+/* NAV */
 nav{
 background:#000;
-padding:15px 25px;
+padding:15px;
 display:flex;
 justify-content:space-between;
-align-items:center;
-position:sticky;
-top:0;
-z-index:999;
 }
 
 nav h2{color:#d4af37}
 
-.cart-icon{
-position:relative;
-font-size:22px;
-}
-
 #cartCount{
-position:absolute;
-top:-8px;
-right:-10px;
 background:red;
 border-radius:50%;
 padding:2px 7px;
@@ -51,8 +38,7 @@ flex-direction:column;
 justify-content:center;
 align-items:center;
 text-align:center;
-background:
-linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.9)),
+background:linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.9)),
 url('https://images.unsplash.com/photo-1610375461246-83df859d849d');
 background-size:cover;
 }
@@ -66,38 +52,25 @@ animation: glow 2s infinite alternate;
 }
 
 @keyframes glow {
-  from { box-shadow: 0 0 30px gold; }
-  to { box-shadow: 0 0 80px orange; }
+from{box-shadow:0 0 30px gold;}
+to{box-shadow:0 0 80px orange;}
 }
 
-.hero h1{color:#d4af37;font-size:40px}
-.hero p{margin-top:10px;opacity:.9}
+.hero h1{color:#d4af37}
 
-/* BUTTON */
 .btn{
 background:#25D366;
-padding:13px 22px;
+padding:12px 20px;
 border-radius:8px;
-color:white;
+color:#fff;
 text-decoration:none;
 display:inline-block;
 margin-top:15px;
-cursor:pointer;
-border:none;
 }
 
 /* SECTION */
-.section{
-max-width:1100px;
-margin:auto;
-padding:70px 20px;
-}
-
-.section h2{
-text-align:center;
-color:#d4af37;
-margin-bottom:30px;
-}
+.section{padding:60px 20px;max-width:1100px;margin:auto}
+.section h2{text-align:center;color:#d4af37;margin-bottom:25px}
 
 /* GRID */
 .grid{
@@ -108,19 +81,13 @@ gap:20px;
 
 .card{
 background:#1a1a1a;
-padding:25px;
+padding:20px;
 border-radius:12px;
 }
 
-select{
-width:100%;
-padding:12px;
-margin-top:10px;
-border-radius:6px;
-border:none;
-}
+select{width:100%;padding:10px;margin-top:10px}
 
-/* TESTIMONI */
+/* TESTI */
 .testimoni-grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
@@ -133,55 +100,47 @@ padding:20px;
 border-radius:12px;
 }
 
-.testi-name{color:#d4af37;font-weight:600}
-.stars{color:gold;margin:8px 0}
+.testi-name{color:#d4af37}
+.stars{color:gold;margin:5px 0}
 
 /* MAP */
 iframe{
 width:100%;
-height:320px;
+height:300px;
 border:0;
 border-radius:10px;
 margin-top:20px;
 }
 
-/* FLOAT WA */
+/* WA FLOAT */
 .wa{
 position:fixed;
 bottom:20px;
 right:20px;
 background:#25D366;
 padding:15px;
-border-radius:50px;
+border-radius:50%;
 color:white;
 text-decoration:none;
-font-weight:bold;
 }
 
 footer{
 background:#000;
 text-align:center;
-padding:25px;
-color:#aaa;
+padding:20px;
+margin-top:40px;
 }
-
-button{
-padding:5px 10px;
-margin:3px;
-}
-
 </style>
+
 </head>
 
 <body>
 
-<!-- NAVBAR -->
 <nav>
 <h2>ANTAM GOLD</h2>
-<div class="cart-icon">🛒 <span id="cartCount">0</span></div>
+<div>🛒 <span id="cartCount">0</span></div>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
 
 <div class="logo">
@@ -190,46 +149,84 @@ margin:3px;
 
 <h1>Toko Emas ANTAM Official</h1>
 <p>Order Mudah • Aman • Terpercaya</p>
+
 <a class="btn" href="https://wa.me/6283172766800">Chat WhatsApp</a>
 
 </section>
 
-<!-- ORDER -->
+<!-- PRODUK -->
 <section class="section">
-<h2>Order Emas ANTAM</h2>
+<h2>Order Emas</h2>
 
 <div class="grid">
 
 <div class="card">
 <h3>Pilih Gramasi</h3>
-
 <select id="gram">
 <option value="785000">0.5 Gram - Rp785.000</option>
 <option value="1460000">1 Gram - Rp1.460.000</option>
 <option value="7050000">5 Gram - Rp7.050.000</option>
 <option value="14000000">10 Gram - Rp14.000.000</option>
 </select>
-
-<button class="btn" onclick="tambahCart()">Tambah Keranjang</button>
+<button class="btn" onclick="tambahCart()">Tambah</button>
 </div>
 
 <div class="card">
-<h3>🛒 Keranjang</h3>
+<h3>Keranjang</h3>
 <div id="cartItems"></div>
-<hr>
 <h3>Total: <span id="totalHarga">Rp0</span></h3>
-<button class="btn" onclick="checkoutWA()">Checkout WhatsApp</button>
+<button class="btn" onclick="checkoutWA()">Checkout</button>
 </div>
 
 </div>
 </section>
 
-<footer>© 2026 Toko Emas ANTAM Official</footer>
+<!-- TESTIMONI -->
+<section class="section">
+<h2>Testimoni Pelanggan</h2>
+
+<div class="testimoni-grid">
+
+<div class="testi-card">
+<div class="testi-name">Andi - Medan</div>
+<div class="stars">★★★★★</div>
+<p>Emasnya asli dan terpercaya, pengiriman cepat!</p>
+</div>
+
+<div class="testi-card">
+<div class="testi-name">Siti - Jakarta</div>
+<div class="stars">★★★★★</div>
+<p>Harga murah dan admin sangat ramah.</p>
+</div>
+
+<div class="testi-card">
+<div class="testi-name">Rudi - Surabaya</div>
+<div class="stars">★★★★★</div>
+<p>Sudah beli 3x, selalu puas dan amanah.</p>
+</div>
+
+</div>
+</section>
+
+<!-- ALAMAT -->
+<section class="section">
+<h2>Alamat Toko</h2>
+
+<p style="text-align:center;">
+Jl. Pusat Pasar, Medan Kota, Sumatera Utara<br>
+Buka setiap hari 08.00 - 20.00 WIB
+</p>
+
+<iframe src="https://www.google.com/maps?q=Medan&output=embed"></iframe>
+
+</section>
+
+<footer>© 2026 Toko Emas ANTAM</footer>
 
 <a class="wa" href="https://wa.me/6283172766800">WA</a>
 
 <script>
-let cart = JSON.parse(localStorage.getItem("cart")) || [];
+let cart=[];
 
 function rupiah(a){return "Rp"+a.toLocaleString("id-ID");}
 
@@ -237,14 +234,13 @@ function updateCart(){
 let total=0,jumlah=0;
 let c=document.getElementById("cartItems");
 c.innerHTML="";
-cart.forEach((item,i)=>{
+cart.forEach((item)=>{
 total+=item.harga*item.qty;
 jumlah+=item.qty;
 c.innerHTML+=`<div>${item.nama} x${item.qty}</div>`;
 });
 document.getElementById("totalHarga").innerText=rupiah(total);
 document.getElementById("cartCount").innerText=jumlah;
-localStorage.setItem("cart",JSON.stringify(cart));
 }
 
 function tambahCart(){
@@ -263,9 +259,7 @@ pesan+=`${i+1}. ${item.nama} x${item.qty}%0A`;
 });
 window.open("https://wa.me/6283172766800?text="+pesan);
 }
-
-updateCart();
 </script>
 
 </body>
-</html>
+  </html>
