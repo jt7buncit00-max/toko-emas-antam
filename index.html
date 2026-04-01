@@ -58,13 +58,16 @@ background-size:cover;
 }
 
 /* LOGO */
-.logo{
-margin-bottom:20px;
-}
 .logo img{
-width:120px;
+width:200px;
 border-radius:50%;
-box-shadow:0 0 25px gold;
+box-shadow:0 0 60px gold, 0 0 100px orange;
+animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+  from { box-shadow: 0 0 30px gold; }
+  to { box-shadow: 0 0 80px orange; }
 }
 
 .hero h1{color:#d4af37;font-size:40px}
@@ -191,8 +194,7 @@ margin:3px;
 
 </section>
 
-<!-- SISANYA TIDAK BERUBAH -->
-
+<!-- ORDER -->
 <section class="section">
 <h2>Order Emas ANTAM</h2>
 
@@ -220,19 +222,6 @@ margin:3px;
 </div>
 
 </div>
-</section>
-
-<section class="section">
-<h2>Testimoni Customer</h2>
-<div class="testimoni-grid">
-<div class="testi-card"><div class="testi-name">Andi</div><div class="stars">★★★★★</div>Pelayanan cepat</div>
-<div class="testi-card"><div class="testi-name">Siti</div><div class="stars">★★★★★</div>Terpercaya</div>
-</div>
-</section>
-
-<section class="section">
-<h2>Lokasi</h2>
-<iframe src="https://maps.google.com/maps?q=Jakarta&output=embed"></iframe>
 </section>
 
 <footer>© 2026 Toko Emas ANTAM Official</footer>
@@ -279,4 +268,4 @@ updateCart();
 </script>
 
 </body>
-  </html>
+</html>
