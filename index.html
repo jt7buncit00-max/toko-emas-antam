@@ -13,20 +13,14 @@
 *{margin:0;padding:0;box-sizing:border-box;font-family:Poppins;}
 body{background:#0b0b0b;color:#fff}
 
-/* NAV */
 nav{
-background:linear-gradient(90deg,#000,#1a1a1a);
+background:#000;
 padding:15px 25px;
 display:flex;
 justify-content:space-between;
-align-items:center;
-box-shadow:0 0 20px #000;
 }
 
-nav h2{
-color:#d4af37;
-letter-spacing:2px;
-}
+nav h2{color:#d4af37}
 
 #cartCount{
 background:red;
@@ -35,7 +29,6 @@ padding:2px 7px;
 font-size:12px;
 }
 
-/* HERO */
 .hero{
 height:90vh;
 display:flex;
@@ -48,61 +41,27 @@ url('https://images.unsplash.com/photo-1610375461246-83df859d849d');
 background-size:cover;
 }
 
-/* LOGO */
 .logo img{
 width:180px;
 border-radius:50%;
-box-shadow:0 0 60px gold,0 0 120px orange;
-animation: glow 2s infinite alternate;
+box-shadow:0 0 60px gold;
 }
 
-@keyframes glow{
-from{box-shadow:0 0 20px gold;}
-to{box-shadow:0 0 80px orange;}
-}
+.hero h1{color:#d4af37}
 
-.hero h1{
-color:#d4af37;
-font-size:32px;
-margin-top:15px;
-}
-
-.hero p{
-opacity:0.8;
-margin-top:10px;
-}
-
-/* BUTTON */
 .btn{
-background:linear-gradient(45deg,#25D366,#128C7E);
+background:#25D366;
 padding:12px 25px;
 border-radius:10px;
 color:#fff;
 text-decoration:none;
 display:inline-block;
 margin-top:15px;
-transition:0.3s;
 }
 
-.btn:hover{
-transform:scale(1.1);
-box-shadow:0 0 15px #25D366;
-}
+.section{padding:60px 20px;max-width:1100px;margin:auto}
+.section h2{text-align:center;color:#d4af37;margin-bottom:25px}
 
-/* SECTION */
-.section{
-padding:60px 20px;
-max-width:1100px;
-margin:auto;
-}
-
-.section h2{
-text-align:center;
-color:#d4af37;
-margin-bottom:25px;
-}
-
-/* GRID */
 .grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
@@ -113,24 +72,10 @@ gap:20px;
 background:#141414;
 padding:20px;
 border-radius:15px;
-box-shadow:0 0 15px rgba(255,215,0,0.1);
-transition:0.3s;
 }
 
-.card:hover{
-transform:translateY(-5px);
-box-shadow:0 0 25px rgba(255,215,0,0.3);
-}
+select{width:100%;padding:10px;margin-top:10px}
 
-select{
-width:100%;
-padding:10px;
-margin-top:10px;
-border-radius:8px;
-border:none;
-}
-
-/* TESTI */
 .testimoni-grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
@@ -141,20 +86,20 @@ gap:20px;
 background:#141414;
 padding:20px;
 border-radius:15px;
-box-shadow:0 0 10px rgba(255,215,0,0.1);
 }
 
-.testi-name{
-color:#d4af37;
-font-weight:600;
+.testi-name{color:#d4af37}
+.stars{color:gold;margin:5px 0}
+
+.payment{
+background:#111;
+padding:25px;
+border-radius:15px;
+text-align:center;
 }
 
-.stars{
-color:gold;
-margin:5px 0;
-}
+.payment h3{color:#d4af37;margin-bottom:10px}
 
-/* MAP */
 iframe{
 width:100%;
 height:300px;
@@ -163,7 +108,6 @@ border-radius:10px;
 margin-top:20px;
 }
 
-/* WA FLOAT */
 .wa{
 position:fixed;
 bottom:20px;
@@ -173,17 +117,13 @@ padding:15px;
 border-radius:50%;
 color:white;
 text-decoration:none;
-box-shadow:0 0 15px #25D366;
 }
 
-/* FOOTER */
 footer{
 background:#000;
 text-align:center;
 padding:20px;
 margin-top:40px;
-font-size:14px;
-opacity:0.7;
 }
 </style>
 
@@ -203,7 +143,7 @@ opacity:0.7;
 </div>
 
 <h1>Toko Emas ANTAM Official</h1>
-<p>Investasi Aman • Harga Terbaik • Terpercaya</p>
+<p>Investasi Aman • Terpercaya • Resmi</p>
 
 <a class="btn" href="https://wa.me/6283172766800">Chat WhatsApp</a>
 
@@ -236,6 +176,22 @@ opacity:0.7;
 </div>
 </section>
 
+<!-- PEMBAYARAN -->
+<section class="section">
+<h2>Pembayaran</h2>
+
+<div class="payment">
+<h3>Transfer Bank</h3>
+<p><b>BNI - 2008767103</b></p>
+<p>a.n M ILHAM SIRAIT</p>
+
+<h3 style="margin-top:20px;">QRIS</h3>
+<img src="qris.png" width="200">
+<p>Scan untuk bayar</p>
+</div>
+
+</section>
+
 <!-- TESTIMONI -->
 <section class="section">
 <h2>Testimoni Pelanggan</h2>
@@ -243,21 +199,21 @@ opacity:0.7;
 <div class="testimoni-grid">
 
 <div class="testi-card">
-<div class="testi-name">Andi - Medan</div>
+<div class="testi-name">Andi</div>
 <div class="stars">★★★★★</div>
-<p>Emas asli, pelayanan cepat dan aman!</p>
+<p>Pengiriman cepat & aman</p>
 </div>
 
 <div class="testi-card">
-<div class="testi-name">Siti - Jakarta</div>
+<div class="testi-name">Siti</div>
 <div class="stars">★★★★★</div>
-<p>Admin responsif dan harga terbaik.</p>
+<p>Admin ramah dan terpercaya</p>
 </div>
 
 <div class="testi-card">
-<div class="testi-name">Rudi - Surabaya</div>
+<div class="testi-name">Rudi</div>
 <div class="stars">★★★★★</div>
-<p>Sudah langganan, sangat terpercaya.</p>
+<p>Harga terbaik dan resmi</p>
 </div>
 
 </div>
@@ -309,13 +265,21 @@ updateCart();
 }
 
 function checkoutWA(){
-let pesan="Halo Admin,%0ASaya ingin order:%0A";
+let total=document.getElementById("totalHarga").innerText;
+
+let pesan="Halo Admin,%0A";
+pesan+="Saya ingin order emas:%0A";
+
 cart.forEach((item,i)=>{
 pesan+=`${i+1}. ${item.nama} x${item.qty}%0A`;
 });
+
+pesan+=`Total: ${total}%0A`;
+pesan+="Saya akan transfer ke BNI 🙏";
+
 window.open("https://wa.me/6283172766800?text="+pesan);
 }
 </script>
 
 </body>
-                                       </html>
+  </html>
