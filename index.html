@@ -11,17 +11,22 @@
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:Poppins;}
-body{background:#0f0f0f;color:#fff}
+body{background:#0b0b0b;color:#fff}
 
 /* NAV */
 nav{
-background:#000;
-padding:15px;
+background:linear-gradient(90deg,#000,#1a1a1a);
+padding:15px 25px;
 display:flex;
 justify-content:space-between;
+align-items:center;
+box-shadow:0 0 20px #000;
 }
 
-nav h2{color:#d4af37}
+nav h2{
+color:#d4af37;
+letter-spacing:2px;
+}
 
 #cartCount{
 background:red;
@@ -32,45 +37,70 @@ font-size:12px;
 
 /* HERO */
 .hero{
-height:85vh;
+height:90vh;
 display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
 text-align:center;
-background:linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.9)),
+background:linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.95)),
 url('https://images.unsplash.com/photo-1610375461246-83df859d849d');
 background-size:cover;
 }
 
 /* LOGO */
 .logo img{
-width:200px;
+width:180px;
 border-radius:50%;
-box-shadow:0 0 60px gold, 0 0 100px orange;
+box-shadow:0 0 60px gold,0 0 120px orange;
 animation: glow 2s infinite alternate;
 }
 
-@keyframes glow {
-from{box-shadow:0 0 30px gold;}
+@keyframes glow{
+from{box-shadow:0 0 20px gold;}
 to{box-shadow:0 0 80px orange;}
 }
 
-.hero h1{color:#d4af37}
+.hero h1{
+color:#d4af37;
+font-size:32px;
+margin-top:15px;
+}
 
+.hero p{
+opacity:0.8;
+margin-top:10px;
+}
+
+/* BUTTON */
 .btn{
-background:#25D366;
-padding:12px 20px;
-border-radius:8px;
+background:linear-gradient(45deg,#25D366,#128C7E);
+padding:12px 25px;
+border-radius:10px;
 color:#fff;
 text-decoration:none;
 display:inline-block;
 margin-top:15px;
+transition:0.3s;
+}
+
+.btn:hover{
+transform:scale(1.1);
+box-shadow:0 0 15px #25D366;
 }
 
 /* SECTION */
-.section{padding:60px 20px;max-width:1100px;margin:auto}
-.section h2{text-align:center;color:#d4af37;margin-bottom:25px}
+.section{
+padding:60px 20px;
+max-width:1100px;
+margin:auto;
+}
+
+.section h2{
+text-align:center;
+color:#d4af37;
+margin-bottom:25px;
+}
 
 /* GRID */
 .grid{
@@ -80,12 +110,25 @@ gap:20px;
 }
 
 .card{
-background:#1a1a1a;
+background:#141414;
 padding:20px;
-border-radius:12px;
+border-radius:15px;
+box-shadow:0 0 15px rgba(255,215,0,0.1);
+transition:0.3s;
 }
 
-select{width:100%;padding:10px;margin-top:10px}
+.card:hover{
+transform:translateY(-5px);
+box-shadow:0 0 25px rgba(255,215,0,0.3);
+}
+
+select{
+width:100%;
+padding:10px;
+margin-top:10px;
+border-radius:8px;
+border:none;
+}
 
 /* TESTI */
 .testimoni-grid{
@@ -95,13 +138,21 @@ gap:20px;
 }
 
 .testi-card{
-background:#1a1a1a;
+background:#141414;
 padding:20px;
-border-radius:12px;
+border-radius:15px;
+box-shadow:0 0 10px rgba(255,215,0,0.1);
 }
 
-.testi-name{color:#d4af37}
-.stars{color:gold;margin:5px 0}
+.testi-name{
+color:#d4af37;
+font-weight:600;
+}
+
+.stars{
+color:gold;
+margin:5px 0;
+}
 
 /* MAP */
 iframe{
@@ -122,13 +173,17 @@ padding:15px;
 border-radius:50%;
 color:white;
 text-decoration:none;
+box-shadow:0 0 15px #25D366;
 }
 
+/* FOOTER */
 footer{
 background:#000;
 text-align:center;
 padding:20px;
 margin-top:40px;
+font-size:14px;
+opacity:0.7;
 }
 </style>
 
@@ -148,7 +203,7 @@ margin-top:40px;
 </div>
 
 <h1>Toko Emas ANTAM Official</h1>
-<p>Order Mudah • Aman • Terpercaya</p>
+<p>Investasi Aman • Harga Terbaik • Terpercaya</p>
 
 <a class="btn" href="https://wa.me/6283172766800">Chat WhatsApp</a>
 
@@ -190,19 +245,19 @@ margin-top:40px;
 <div class="testi-card">
 <div class="testi-name">Andi - Medan</div>
 <div class="stars">★★★★★</div>
-<p>Emasnya asli dan terpercaya, pengiriman cepat!</p>
+<p>Emas asli, pelayanan cepat dan aman!</p>
 </div>
 
 <div class="testi-card">
 <div class="testi-name">Siti - Jakarta</div>
 <div class="stars">★★★★★</div>
-<p>Harga murah dan admin sangat ramah.</p>
+<p>Admin responsif dan harga terbaik.</p>
 </div>
 
 <div class="testi-card">
 <div class="testi-name">Rudi - Surabaya</div>
 <div class="stars">★★★★★</div>
-<p>Sudah beli 3x, selalu puas dan amanah.</p>
+<p>Sudah langganan, sangat terpercaya.</p>
 </div>
 
 </div>
@@ -263,4 +318,4 @@ window.open("https://wa.me/6283172766800?text="+pesan);
 </script>
 
 </body>
-  </html>
+                                       </html>
