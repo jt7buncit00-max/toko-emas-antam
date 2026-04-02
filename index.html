@@ -92,6 +92,18 @@ padding:20px;
 border-radius:15px;
 }
 
+/* MARKET SIMPLE */
+.market{
+padding:40px 20px;
+text-align:center;
+}
+
+.market img{
+width:120px;
+margin:10px;
+border-radius:10px;
+}
+
 /* TESTIMONI */
 .testimoni-grid{
 display:grid;
@@ -135,61 +147,6 @@ padding:15px;
 border-radius:50%;
 color:white;
 text-decoration:none;
-}
-
-/* MARKETPLACE */
-.market{
-padding:40px 20px;
-background:#0b0b0b;
-}
-
-.market h2{
-text-align:center;
-color:#d4af37;
-margin-bottom:20px;
-}
-
-.market-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:15px;
-}
-
-.market-card{
-background:#141414;
-border-radius:15px;
-overflow:hidden;
-transition:0.3s;
-}
-
-.market-card:hover{
-transform:scale(1.05);
-box-shadow:0 0 15px gold;
-}
-
-.market-card img{
-width:100%;
-height:150px;
-object-fit:cover;
-animation:float 3s infinite;
-}
-
-@keyframes float{
-0%,100%{transform:translateY(0);}
-50%{transform:translateY(-8px);}
-}
-
-.market-body{padding:10px;}
-.market-harga{color:#d4af37;font-weight:bold;}
-
-.market-btn{
-background:#25D366;
-border:none;
-width:100%;
-padding:8px;
-margin-top:5px;
-border-radius:8px;
-color:#fff;
 }
 
 footer{
@@ -251,31 +208,12 @@ margin-top:40px;
 </div>
 </section>
 
-<!-- MARKETPLACE BARU -->
+<!-- MARKET SIMPLE (VERSI LAMA) -->
 <section class="market">
-<h2>Produk Marketplace</h2>
-
-<div class="market-grid">
-
-<div class="market-card">
+<h2>Produk Emas</h2>
 <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/Gold_bar_antam.jpg">
-<div class="market-body">
-<p>Emas 0.5 Gram</p>
-<p class="market-harga">Rp785.000</p>
-<button class="market-btn" onclick="tambahCart()">Tambah</button>
-</div>
-</div>
-
-<div class="market-card">
 <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/Gold_bar_antam.jpg">
-<div class="market-body">
-<p>Emas 1 Gram</p>
-<p class="market-harga">Rp1.460.000</p>
-<button class="market-btn" onclick="tambahCart()">Tambah</button>
-</div>
-</div>
-
-</div>
+<img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/Gold_bar_antam.jpg">
 </section>
 
 <!-- PEMBAYARAN -->
@@ -313,7 +251,7 @@ margin-top:40px;
 </div>
 </section>
 
-<!-- ALAMAT (TETAP) -->
+<!-- ALAMAT -->
 <section class="section">
 <h2>Alamat Toko</h2>
 
@@ -368,4 +306,4 @@ window.open("https://wa.me/6283172766800?text="+pesan);
 </script>
 
 </body>
-  </html>
+</html>
