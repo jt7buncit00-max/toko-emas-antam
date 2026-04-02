@@ -13,6 +13,14 @@
 *{margin:0;padding:0;box-sizing:border-box;font-family:Poppins;}
 body{background:#0b0b0b;color:#fff}
 
+/* TEXT BERJALAN */
+.marquee{
+background:gold;
+color:black;
+padding:10px;
+font-weight:bold;
+}
+
 /* NAV */
 nav{
 background:#000;
@@ -20,37 +28,14 @@ padding:15px 25px;
 display:flex;
 justify-content:space-between;
 }
+
 nav h2{color:#d4af37}
+
 #cartCount{
 background:red;
 border-radius:50%;
 padding:2px 7px;
 font-size:12px;
-}
-
-/* RUNNING TEXT */
-.running-container{
-width:100%;
-overflow:hidden;
-background:#111;
-position:relative;
-height:40px;
-display:flex;
-align-items:center;
-}
-.running-text{
-position:absolute;
-white-space:nowrap;
-left:100%;
-top:50%;
-transform:translateY(-50%);
-font-weight:bold;
-color:#d4af37;
-animation:jalan 15s linear infinite;
-}
-@keyframes jalan{
-0%{transform:translate(0%, -50%)}
-100%{transform:translate(-200%, -50%)}
 }
 
 /* HERO */
@@ -70,6 +55,12 @@ background-size:cover;
 width:180px;
 border-radius:50%;
 box-shadow:0 0 60px gold;
+animation:putar 6s linear infinite;
+}
+
+@keyframes putar{
+from{transform:rotate(0deg);}
+to{transform:rotate(360deg);}
 }
 
 .hero h1{color:#d4af37}
@@ -82,8 +73,6 @@ color:#fff;
 text-decoration:none;
 display:inline-block;
 margin-top:15px;
-border:none;
-cursor:pointer;
 }
 
 /* SECTION */
@@ -97,50 +86,35 @@ grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
 gap:20px;
 }
 
-/* CARD */
 .card{
 background:#141414;
 padding:20px;
 border-radius:15px;
 }
 
-/* PRODUK */
-.img-item{
-margin-bottom:10px;
-cursor:pointer;
-transition:0.3s;
-}
-.img-item img{
-width:100%;
-height:120px;
-object-fit:cover;
-border-radius:10px;
-}
-.img-item:hover{
-transform:scale(1.05);
-}
-
 /* TESTIMONI */
 .testimoni-grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
 gap:20px;
 }
+
 .testi-card{
 background:#141414;
 padding:20px;
 border-radius:15px;
-transition:0.4s;
 }
-.testi-card:hover{
-transform:translateY(-10px);
-box-shadow:0 10px 25px rgba(212,175,55,0.5);
-}
-.testi-name{color:#d4af37;font-weight:bold;}
-.stars{color:gold;margin:5px 0;}
+
+.testi-name{color:#d4af37}
+.stars{color:gold;margin:5px 0}
 
 /* PAYMENT */
-.payment{text-align:center;}
+.payment{
+background:#111;
+padding:25px;
+border-radius:15px;
+text-align:center;
+}
 
 /* MAP */
 iframe{
@@ -163,7 +137,61 @@ color:white;
 text-decoration:none;
 }
 
-/* FOOTER */
+/* MARKETPLACE */
+.market{
+padding:40px 20px;
+background:#0b0b0b;
+}
+
+.market h2{
+text-align:center;
+color:#d4af37;
+margin-bottom:20px;
+}
+
+.market-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:15px;
+}
+
+.market-card{
+background:#141414;
+border-radius:15px;
+overflow:hidden;
+transition:0.3s;
+}
+
+.market-card:hover{
+transform:scale(1.05);
+box-shadow:0 0 15px gold;
+}
+
+.market-card img{
+width:100%;
+height:150px;
+object-fit:cover;
+animation:float 3s infinite;
+}
+
+@keyframes float{
+0%,100%{transform:translateY(0);}
+50%{transform:translateY(-8px);}
+}
+
+.market-body{padding:10px;}
+.market-harga{color:#d4af37;font-weight:bold;}
+
+.market-btn{
+background:#25D366;
+border:none;
+width:100%;
+padding:8px;
+margin-top:5px;
+border-radius:8px;
+color:#fff;
+}
+
 footer{
 background:#000;
 text-align:center;
@@ -176,65 +204,41 @@ margin-top:40px;
 
 <body>
 
+<div class="marquee">
+<marquee>🔥 PROMO EMAS HARI INI 🔥 Harga Murah • Aman • Terpercaya 🔥</marquee>
+</div>
+
 <nav>
 <h2>ANTAM GOLD</h2>
 <div>🛒 <span id="cartCount">0</span></div>
 </nav>
 
-<!-- RUNNING TEXT -->
-<div class="running-container">
-<div class="running-text">
-🔥 Promo Hari Ini! Harga Emas Termurah • 100% Asli ANTAM • Aman & Terpercaya 🔥
-</div>
-</div>
-
-<!-- HERO -->
 <section class="hero">
 <div class="logo">
 <img src="logo.png">
 </div>
+
 <h1>Toko Emas ANTAM Official</h1>
 <p>Investasi Aman • Terpercaya • Resmi</p>
+
 <a class="btn" href="https://wa.me/6283172766800">Chat WhatsApp</a>
 </section>
 
-<!-- PRODUK -->
+<!-- PRODUK LAMA -->
 <section class="section">
 <h2>Order Emas</h2>
 
 <div class="grid">
 
 <div class="card">
-
-<div class="img-item" onclick="pilihGram(0)">
-<img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Emas_Antam.jpg">
-<p>0.5 Gram</p>
-</div>
-
-<div class="img-item" onclick="pilihGram(1)">
-<img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Emas_Antam.jpg">
-<p>1 Gram</p>
-</div>
-
-<div class="img-item" onclick="pilihGram(2)">
-<img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Emas_Antam.jpg">
-<p>5 Gram</p>
-</div>
-
-<div class="img-item" onclick="pilihGram(3)">
-<img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Emas_Antam.jpg">
-<p>10 Gram</p>
-</div>
-
+<h3>Pilih Gramasi</h3>
 <select id="gram">
 <option value="785000">0.5 Gram - Rp785.000</option>
 <option value="1460000">1 Gram - Rp1.460.000</option>
 <option value="7050000">5 Gram - Rp7.050.000</option>
 <option value="14000000">10 Gram - Rp14.000.000</option>
 </select>
-
 <button class="btn" onclick="tambahCart()">Tambah</button>
-
 </div>
 
 <div class="card">
@@ -247,28 +251,28 @@ margin-top:40px;
 </div>
 </section>
 
-<!-- TESTIMONI -->
-<section class="section">
-<h2>Testimoni Pelanggan</h2>
+<!-- MARKETPLACE BARU -->
+<section class="market">
+<h2>Produk Marketplace</h2>
 
-<div class="testimoni-grid">
+<div class="market-grid">
 
-<div class="testi-card">
-<div class="testi-name">Andi</div>
-<div class="stars">★★★★★</div>
-<p>Pengiriman cepat & emas asli, sangat puas!</p>
+<div class="market-card">
+<img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/Gold_bar_antam.jpg">
+<div class="market-body">
+<p>Emas 0.5 Gram</p>
+<p class="market-harga">Rp785.000</p>
+<button class="market-btn" onclick="tambahCart()">Tambah</button>
+</div>
 </div>
 
-<div class="testi-card">
-<div class="testi-name">Siti</div>
-<div class="stars">★★★★★</div>
-<p>Admin ramah dan terpercaya, recomended!</p>
+<div class="market-card">
+<img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/Gold_bar_antam.jpg">
+<div class="market-body">
+<p>Emas 1 Gram</p>
+<p class="market-harga">Rp1.460.000</p>
+<button class="market-btn" onclick="tambahCart()">Tambah</button>
 </div>
-
-<div class="testi-card">
-<div class="testi-name">Rudi</div>
-<div class="stars">★★★★★</div>
-<p>Harga terbaik & kualitas premium.</p>
 </div>
 
 </div>
@@ -277,29 +281,48 @@ margin-top:40px;
 <!-- PEMBAYARAN -->
 <section class="section">
 <h2>Pembayaran</h2>
-
 <div class="payment">
-<h3>Transfer Bank</h3>
 <p><b>BNI - 2008767103</b></p>
 <p>a.n M ILHAM SIRAIT</p>
-
-<h3 style="margin-top:20px;">QRIS</h3>
 <img src="qris.png" width="200">
 </div>
-
 </section>
 
-<!-- ALAMAT -->
+<!-- TESTIMONI -->
+<section class="section">
+<h2>Testimoni Pelanggan</h2>
+
+<div class="testimoni-grid">
+<div class="testi-card">
+<div class="testi-name">Andi</div>
+<div class="stars">★★★★★</div>
+<p>Pengiriman cepat & aman</p>
+</div>
+
+<div class="testi-card">
+<div class="testi-name">Siti</div>
+<div class="stars">★★★★★</div>
+<p>Admin ramah dan terpercaya</p>
+</div>
+
+<div class="testi-card">
+<div class="testi-name">Rudi</div>
+<div class="stars">★★★★★</div>
+<p>Harga terbaik dan resmi</p>
+</div>
+</div>
+</section>
+
+<!-- ALAMAT (TETAP) -->
 <section class="section">
 <h2>Alamat Toko</h2>
 
 <p style="text-align:center;">
-Jl. Pemuda No.1, Rawamangun, Jakarta Timur<br>
-Buka setiap hari 08.00 - 20.00 WIB
+Jl. Pemuda No.1, RT.2/RW.7, Rawamangun, Kec. Pulo Gadung,<br>
+Kota Jakarta Timur, Daerah Khusus Ibukota Jakarta 13220
 </p>
 
 <iframe src="https://www.google.com/maps?q=Jl.+Pemuda+No.1+Rawamangun+Jakarta+Timur&output=embed"></iframe>
-
 </section>
 
 <footer>© 2026 Toko Emas ANTAM</footer>
@@ -333,23 +356,13 @@ if(item){item.qty++;}else{cart.push({nama,harga,qty:1});}
 updateCart();
 }
 
-function pilihGram(index){
-document.getElementById("gram").selectedIndex=index;
-}
-
 function checkoutWA(){
 let total=document.getElementById("totalHarga").innerText;
-
-let pesan="Halo Admin,%0A";
-pesan+="Saya ingin order emas:%0A";
-
+let pesan="Halo Admin,%0ASaya ingin order:%0A";
 cart.forEach((item,i)=>{
 pesan+=`${i+1}. ${item.nama} x${item.qty}%0A`;
 });
-
-pesan+=`Total: ${total}%0A`;
-pesan+="Saya akan transfer ke BNI 🙏";
-
+pesan+=`Total: ${total}`;
 window.open("https://wa.me/6283172766800?text="+pesan);
 }
 </script>
