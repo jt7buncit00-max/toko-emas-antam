@@ -29,6 +29,36 @@ padding:2px 7px;
 font-size:12px;
 }
 
+/* TEXT BERJALAN */
+.running-container{
+width:100%;
+overflow:hidden;
+background:#d4af37;
+color:#000;
+padding:8px 0;
+position:relative;
+cursor:pointer;
+animation:bgAnim 6s infinite alternate;
+}
+
+.running-text{
+white-space:nowrap;
+position:absolute;
+font-weight:bold;
+animation:jalan 12s linear infinite;
+}
+
+@keyframes jalan{
+0%{transform:translateX(100%)}
+100%{transform:translateX(-100%)}
+}
+
+@keyframes bgAnim{
+0%{background:#d4af37}
+50%{background:#ffd700}
+100%{background:#c9a227}
+}
+
 .hero{
 height:90vh;
 display:flex;
@@ -136,6 +166,13 @@ margin-top:40px;
 <div>🛒 <span id="cartCount">0</span></div>
 </nav>
 
+<!-- TEXT BERJALAN -->
+<div class="running-container" onclick="pauseText()">
+  <div class="running-text" id="runText">
+    🔥 PROMO HARI INI! BELI EMAS ANTAM RESMI • HARGA TERBAIK • AMAN & TERPERCAYA 🔥
+  </div>
+</div>
+
 <section class="hero">
 
 <div class="logo">
@@ -149,7 +186,6 @@ margin-top:40px;
 
 </section>
 
-<!-- PRODUK -->
 <section class="section">
 <h2>Order Emas</h2>
 
@@ -176,7 +212,6 @@ margin-top:40px;
 </div>
 </section>
 
-<!-- PEMBAYARAN -->
 <section class="section">
 <h2>Pembayaran</h2>
 
@@ -192,7 +227,6 @@ margin-top:40px;
 
 </section>
 
-<!-- TESTIMONI -->
 <section class="section">
 <h2>Testimoni Pelanggan</h2>
 
@@ -219,7 +253,6 @@ margin-top:40px;
 </div>
 </section>
 
-<!-- ALAMAT -->
 <section class="section">
 <h2>Alamat Toko</h2>
 
@@ -278,6 +311,15 @@ pesan+=`Total: ${total}%0A`;
 pesan+="Saya akan transfer ke BNI 🙏";
 
 window.open("https://wa.me/6283172766800?text="+pesan);
+}
+
+/* TEXT CONTROL */
+let pause=false;
+const runText=document.getElementById("runText");
+
+function pauseText(){
+  pause=!pause;
+  runText.style.animationPlayState = pause ? "paused" : "running";
 }
 </script>
 
