@@ -1,10 +1,8 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Toko Emas ANTAM Official</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -36,23 +34,20 @@ overflow:hidden;
 background:#d4af37;
 color:#000;
 padding:10px 0;
-position:relative;
 cursor:pointer;
 }
 
 .running-text{
 white-space:nowrap;
-position:absolute;
-left:100%;
-top:50%;
-transform:translateY(-50%);
-font-weight:bold;
+display:inline-block;
+padding-left:100%;
 animation:jalan 15s linear infinite;
+font-weight:bold;
 }
 
 @keyframes jalan{
-0%{transform:translate(0%,-50%)}
-100%{transform:translate(-200%,-50%)}
+0%{transform:translateX(0)}
+100%{transform:translateX(-100%)}
 }
 
 /* HERO */
@@ -84,18 +79,13 @@ border-radius:10px;
 color:#fff;
 text-decoration:none;
 display:inline-block;
-margin-top:15px;
-transition:0.3s;
+margin-top:10px;
+border:none;
+cursor:pointer;
 }
 
-.btn:hover{
-transform:scale(1.1);
-box-shadow:0 0 15px #25D366;
-}
-
-.btn:active{
-transform:scale(0.95);
-}
+.btn:hover{transform:scale(1.1)}
+.btn:active{transform:scale(0.95)}
 
 /* SECTION */
 .section{padding:60px 20px;max-width:1100px;margin:auto}
@@ -114,16 +104,14 @@ background:#141414;
 padding:20px;
 border-radius:15px;
 transition:0.4s;
-position:relative;
-overflow:hidden;
 }
 
 .card:hover{
-transform:translateY(-10px) scale(1.02);
+transform:translateY(-10px);
 box-shadow:0 10px 30px rgba(212,175,55,0.6);
 }
 
-/* GAMBAR PRODUK */
+/* PRODUK */
 .img-item{
 text-align:center;
 cursor:pointer;
@@ -152,52 +140,26 @@ filter:brightness(1.1) drop-shadow(0 0 20px gold);
 
 .img-item.active img{
 border:2px solid gold;
-transform:scale(1.05);
 }
 
-/* TESTIMONI */
-.testimoni-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:20px;
-}
-
+/* TESTI */
 .testi-card{
 background:#141414;
 padding:20px;
 border-radius:15px;
-transition:0.4s;
+margin-bottom:15px;
 }
-
-.testi-card:hover{
-transform:translateY(-8px);
-box-shadow:0 10px 25px rgba(212,175,55,0.4);
-}
-
-.testi-name{color:#d4af37}
-.stars{color:gold;margin:5px 0}
 
 /* FADE */
-.fade-in{
-opacity:0;
-transform:translateY(30px);
-transition:1s;
-}
+.fade-in{opacity:0;transform:translateY(30px);transition:1s}
+.fade-in.show{opacity:1;transform:translateY(0)}
 
-.fade-in.show{
-opacity:1;
-transform:translateY(0);
-}
-
-/* PAYMENT */
 .payment{
 background:#111;
 padding:25px;
 border-radius:15px;
 text-align:center;
 }
-
-.payment h3{color:#d4af37;margin-bottom:10px}
 
 iframe{
 width:100%;
@@ -217,15 +179,7 @@ border-radius:50%;
 color:white;
 text-decoration:none;
 }
-
-footer{
-background:#000;
-text-align:center;
-padding:20px;
-margin-top:40px;
-}
 </style>
-
 </head>
 
 <body>
@@ -236,19 +190,15 @@ margin-top:40px;
 </nav>
 
 <div class="running-container" onclick="pauseText()">
-  <div class="running-text" id="runText">
-    🔥 PROMO HARI INI! BELI EMAS ANTAM RESMI • HARGA TERBAIK • AMAN & TERPERCAYA 🔥
-  </div>
+<div class="running-text" id="runText">
+🔥 PROMO HARI INI! BELI EMAS RESMI • HARGA TERBAIK • AMAN 🔥
+</div>
 </div>
 
 <section class="hero">
-<div class="logo">
-<img src="logo.png">
-</div>
-
+<div class="logo"><img src="logo.png"></div>
 <h1>Toko Emas ANTAM Official</h1>
-<p>Investasi Aman • Terpercaya • Resmi</p>
-
+<p>Investasi Aman • Terpercaya</p>
 <a class="btn" href="https://wa.me/6283172766800">Chat WhatsApp</a>
 </section>
 
@@ -260,7 +210,7 @@ margin-top:40px;
 <div class="card fade-in">
 <h3>Pilih Gramasi</h3>
 
-<div style="display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:15px 0;">
+<div style="display:grid;grid-template-columns:repeat(2,1fr);gap:10px;">
 
 <div class="img-item" onclick="pilihGram(0)">
 <img src="https://images.unsplash.com/photo-1610375461246-83df859d849d">
@@ -306,55 +256,41 @@ margin-top:40px;
 
 <section class="section">
 <h2>Pembayaran</h2>
+
 <div class="payment fade-in">
 <h3>Transfer Bank</h3>
 <p><b>BNI - 2008767103</b></p>
 <p>a.n M ILHAM SIRAIT</p>
 
 <h3 style="margin-top:20px;">QRIS</h3>
-<img src="qris.png" width="200">
-<p>Scan untuk bayar</p>
-</div>
-</section>
 
-<section class="section">
-<h2>Testimoni Pelanggan</h2>
+<!-- QRIS PRO -->
+<img src="qris.png" style="width:220px;border-radius:15px;box-shadow:0 0 25px gold;cursor:pointer;" onclick="openQRIS()">
 
-<div class="testimoni-grid">
+<p style="color:#d4af37;">Klik untuk perbesar</p>
 
-<div class="testi-card fade-in">
-<div class="testi-name">Andi</div>
-<div class="stars">★★★★★</div>
-<p>Pengiriman cepat & aman</p>
-</div>
-
-<div class="testi-card fade-in">
-<div class="testi-name">Siti</div>
-<div class="stars">★★★★★</div>
-<p>Admin ramah dan terpercaya</p>
-</div>
-
-<div class="testi-card fade-in">
-<div class="testi-name">Rudi</div>
-<div class="stars">★★★★★</div>
-<p>Harga terbaik dan resmi</p>
-</div>
+<button class="btn" onclick="downloadQR()">Download QR</button>
+<button class="btn" style="background:gold;color:black;" onclick="notifBayar()">Saya Sudah Bayar</button>
 
 </div>
 </section>
 
+<!-- MODAL QR -->
+<div id="qrisModal" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:#000;justify-content:center;align-items:center;" onclick="closeQRIS()">
+<img src="qris.png" style="width:90%;max-width:400px;border-radius:20px;">
+</div>
+
 <section class="section">
-<h2>Alamat Toko</h2>
+<h2>Alamat</h2>
 <p style="text-align:center;">
-Jl. Pemuda No.1, RT.2/RW.7, Rawamangun, Kec. Pulo Gadung,<br>
-Kota Jakarta Timur, Daerah Khusus Ibukota Jakarta 13220<br>
-Buka setiap hari 08.00 - 20.00 WIB
+Jl. Pemuda No.1, Rawamangun, Jakarta Timur
 </p>
-
-<iframe src="https://www.google.com/maps?q=Jl.+Pemuda+No.1+Rawamangun+Jakarta+Timur&output=embed"></iframe>
+<iframe src="https://www.google.com/maps?q=Rawamangun&output=embed"></iframe>
 </section>
 
-<footer>© 2026 Toko Emas ANTAM</footer>
+<footer style="text-align:center;padding:20px;background:#000;">
+© 2026 Toko Emas
+</footer>
 
 <a class="wa" href="https://wa.me/6283172766800">WA</a>
 
@@ -387,50 +323,49 @@ updateCart();
 
 function checkoutWA(){
 let total=document.getElementById("totalHarga").innerText;
-
-let pesan="Halo Admin,%0A";
-pesan+="Saya ingin order emas:%0A";
-
+let pesan="Halo Admin,%0ASaya ingin order:%0A";
 cart.forEach((item,i)=>{
 pesan+=`${i+1}. ${item.nama} x${item.qty}%0A`;
 });
-
-pesan+=`Total: ${total}%0A`;
-pesan+="Saya akan transfer ke BNI 🙏";
-
+pesan+=`Total: ${total}`;
 window.open("https://wa.me/6283172766800?text="+pesan);
 }
 
-function pilihGram(index){
-let select=document.getElementById("gram");
-select.selectedIndex=index;
-
-document.querySelectorAll(".img-item").forEach(el=>{
-el.classList.remove("active");
-});
-
-document.querySelectorAll(".img-item")[index].classList.add("active");
+function pilihGram(i){
+document.getElementById("gram").selectedIndex=i;
+document.querySelectorAll(".img-item").forEach(el=>el.classList.remove("active"));
+document.querySelectorAll(".img-item")[i].classList.add("active");
 }
 
-let pause=false;
-const runText=document.getElementById("runText");
+function openQRIS(){
+document.getElementById("qrisModal").style.display="flex";
+}
+function closeQRIS(){
+document.getElementById("qrisModal").style.display="none";
+}
+function downloadQR(){
+let a=document.createElement("a");
+a.href="qris.png";
+a.download="QRIS.png";
+a.click();
+}
+function notifBayar(){
+alert("Terima kasih, kirim bukti ke WhatsApp 🙏");
+window.open("https://wa.me/6283172766800?text=Saya sudah bayar QRIS");
+}
 
 function pauseText(){
-pause=!pause;
-runText.style.animationPlayState = pause ? "paused" : "running";
+let el=document.getElementById("runText");
+el.style.animationPlayState =
+el.style.animationPlayState==="paused"?"running":"paused";
 }
 
 const observer=new IntersectionObserver((entries)=>{
 entries.forEach(entry=>{
-if(entry.isIntersecting){
-entry.target.classList.add("show");
-}
+if(entry.isIntersecting){entry.target.classList.add("show");}
 });
 });
-
-document.querySelectorAll(".fade-in").forEach(el=>{
-observer.observe(el);
-});
+document.querySelectorAll(".fade-in").forEach(el=>observer.observe(el));
 </script>
 
 </body>
