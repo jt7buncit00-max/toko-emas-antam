@@ -29,34 +29,35 @@ padding:2px 7px;
 font-size:12px;
 }
 
-/* TEXT BERJALAN */
+/* TEXT BERJALAN FIX */
 .running-container{
 width:100%;
 overflow:hidden;
 background:#d4af37;
 color:#000;
-padding:8px 0;
+padding:10px 0;
 position:relative;
 cursor:pointer;
-animation:bgAnim 6s infinite alternate;
 }
 
 .running-text{
 white-space:nowrap;
 position:absolute;
+left:100%;
+top:50%;
+transform:translateY(-50%);
 font-weight:bold;
-animation:jalan 12s linear infinite;
+font-size:16px;
+animation:jalan 15s linear infinite;
 }
 
 @keyframes jalan{
-0%{transform:translateX(100%)}
-100%{transform:translateX(-100%)}
+0%{
+transform:translate(0%, -50%);
 }
-
-@keyframes bgAnim{
-0%{background:#d4af37}
-50%{background:#ffd700}
-100%{background:#c9a227}
+100%{
+transform:translate(-200%, -50%);
+}
 }
 
 /* HERO */
@@ -223,7 +224,7 @@ margin-top:40px;
 <div>🛒 <span id="cartCount">0</span></div>
 </nav>
 
-<!-- TEXT BERJALAN -->
+<!-- TEXT BERJALAN FIX -->
 <div class="running-container" onclick="pauseText()">
   <div class="running-text" id="runText">
     🔥 PROMO HARI INI! BELI EMAS ANTAM RESMI • HARGA TERBAIK • AMAN & TERPERCAYA 🔥
@@ -362,7 +363,7 @@ pesan+="Saya akan transfer ke BNI 🙏";
 window.open("https://wa.me/6283172766800?text="+pesan);
 }
 
-/* TEXT BERJALAN */
+/* PAUSE TEXT */
 let pause=false;
 const runText=document.getElementById("runText");
 
@@ -371,7 +372,7 @@ function pauseText(){
   runText.style.animationPlayState = pause ? "paused" : "running";
 }
 
-/* FADE IN SCROLL */
+/* FADE IN */
 const observer=new IntersectionObserver((entries)=>{
 entries.forEach(entry=>{
 if(entry.isIntersecting){
