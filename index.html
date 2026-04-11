@@ -16,7 +16,6 @@
 html{scroll-behavior:smooth;}
 body{background:#0b0b0b;color:#fff}
 
-/* TEXT BERJALAN */
 .marquee{
 background:gold;
 color:black;
@@ -24,7 +23,6 @@ padding:10px;
 font-weight:bold;
 }
 
-/* NAV */
 nav{
 background:#000;
 padding:15px 25px;
@@ -41,7 +39,6 @@ padding:2px 7px;
 font-size:12px;
 }
 
-/* HERO */
 .hero{
 height:90vh;
 display:flex;
@@ -78,11 +75,9 @@ display:inline-block;
 margin-top:15px;
 }
 
-/* SECTION */
 .section{padding:60px 20px;max-width:1100px;margin:auto}
 .section h2{text-align:center;color:#d4af37;margin-bottom:25px}
 
-/* GRID */
 .grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
@@ -101,13 +96,11 @@ transform:translateY(-5px);
 box-shadow:0 0 15px gold;
 }
 
-/* MARKET */
 .market{
 padding:40px 20px;
 text-align:center;
 }
 
-/* TESTIMONI */
 .testimoni-grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
@@ -123,7 +116,6 @@ border-radius:15px;
 .testi-name{color:#d4af37}
 .stars{color:gold;margin:5px 0}
 
-/* PAYMENT */
 .payment{
 background:#111;
 padding:25px;
@@ -131,7 +123,6 @@ border-radius:15px;
 text-align:center;
 }
 
-/* MAP */
 iframe{
 width:100%;
 height:300px;
@@ -140,7 +131,6 @@ border-radius:10px;
 margin-top:20px;
 }
 
-/* WA */
 .wa{
 position:fixed;
 bottom:20px;
@@ -152,7 +142,6 @@ color:white;
 text-decoration:none;
 }
 
-/* GRAFIK */
 canvas{
 background:#141414;
 padding:15px;
@@ -182,7 +171,7 @@ margin-top:40px;
 
 <section class="hero">
 <div class="logo">
-<img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/Gold_bar_antam.jpg">
+<img src="logo.png">
 </div>
 
 <h1>Toko Emas ANTAM Official</h1>
@@ -191,7 +180,6 @@ margin-top:40px;
 <a class="btn" href="https://wa.me/6283172766800">Chat WhatsApp</a>
 </section>
 
-<!-- PRODUK -->
 <section class="section">
 <h2>Order Emas</h2>
 
@@ -218,7 +206,6 @@ margin-top:40px;
 </div>
 </section>
 
-<!-- MARKET -->
 <section class="market">
 <h2>Produk Emas</h2>
 
@@ -245,13 +232,11 @@ margin-top:40px;
 </div>
 </section>
 
-<!-- GRAFIK -->
 <section class="section">
 <h2>Grafik Harga Emas Real-Time</h2>
 <canvas id="grafikEmas"></canvas>
 </section>
 
-<!-- PEMBAYARAN -->
 <section class="section">
 <h2>Pembayaran</h2>
 <div class="payment">
@@ -261,7 +246,6 @@ margin-top:40px;
 </div>
 </section>
 
-<!-- TESTIMONI -->
 <section class="section">
 <h2>Testimoni Pelanggan</h2>
 
@@ -286,7 +270,6 @@ margin-top:40px;
 </div>
 </section>
 
-<!-- ALAMAT -->
 <section class="section">
 <h2>Alamat Toko</h2>
 
@@ -342,7 +325,7 @@ pesan+=`Total: ${total}`;
 window.open("https://wa.me/6283172766800?text="+pesan);
 }
 
-/* GRAFIK REALTIME (SIMULASI) */
+/* GRAFIK REALTIME */
 const ctx = document.getElementById('grafikEmas');
 
 let chart = new Chart(ctx, {
