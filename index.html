@@ -9,8 +9,11 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:Poppins;}
+html{scroll-behavior:smooth;}
 body{background:#0b0b0b;color:#fff}
 
 /* TEXT BERJALAN */
@@ -90,18 +93,18 @@ gap:20px;
 background:#141414;
 padding:20px;
 border-radius:15px;
+transition:0.3s;
 }
 
-/* MARKET SIMPLE */
+.card:hover{
+transform:translateY(-5px);
+box-shadow:0 0 15px gold;
+}
+
+/* MARKET */
 .market{
 padding:40px 20px;
 text-align:center;
-}
-
-.market img{
-width:120px;
-margin:10px;
-border-radius:10px;
 }
 
 /* TESTIMONI */
@@ -149,6 +152,13 @@ color:white;
 text-decoration:none;
 }
 
+/* GRAFIK */
+canvas{
+background:#141414;
+padding:15px;
+border-radius:15px;
+}
+
 footer{
 background:#000;
 text-align:center;
@@ -172,7 +182,7 @@ margin-top:40px;
 
 <section class="hero">
 <div class="logo">
-<img src="logo.png">
+<img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/Gold_bar_antam.jpg">
 </div>
 
 <h1>Toko Emas ANTAM Official</h1>
@@ -181,7 +191,7 @@ margin-top:40px;
 <a class="btn" href="https://wa.me/6283172766800">Chat WhatsApp</a>
 </section>
 
-<!-- PRODUK LAMA -->
+<!-- PRODUK -->
 <section class="section">
 <h2>Order Emas</h2>
 
@@ -208,12 +218,37 @@ margin-top:40px;
 </div>
 </section>
 
-<!-- MARKET SIMPLE (VERSI LAMA) -->
+<!-- MARKET -->
 <section class="market">
 <h2>Produk Emas</h2>
+
+<div class="grid">
+
+<div class="card">
 <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/Gold_bar_antam.jpg">
-<img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/Gold_bar_antam.jpg">
-<img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/Gold_bar_antam.jpg">
+<h4>Antam 0.5 Gram</h4>
+<p>Rp785.000</p>
+</div>
+
+<div class="card">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Gold_bar_1kg.jpg/640px-Gold_bar_1kg.jpg">
+<h4>Antam 1 Gram</h4>
+<p>Rp1.460.000</p>
+</div>
+
+<div class="card">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Gold_ingots.jpg/640px-Gold_ingots.jpg">
+<h4>Antam 5 Gram</h4>
+<p>Rp7.050.000</p>
+</div>
+
+</div>
+</section>
+
+<!-- GRAFIK -->
+<section class="section">
+<h2>Grafik Harga Emas Real-Time</h2>
+<canvas id="grafikEmas"></canvas>
 </section>
 
 <!-- PEMBAYARAN -->
@@ -289,9 +324,12 @@ function tambahCart(){
 let s=document.getElementById("gram");
 let nama=s.options[s.selectedIndex].text;
 let harga=parseInt(s.value);
+
 let item=cart.find(p=>p.nama===nama);
 if(item){item.qty++;}else{cart.push({nama,harga,qty:1});}
+
 updateCart();
+alert("Produk berhasil ditambahkan");
 }
 
 function checkoutWA(){
@@ -303,7 +341,48 @@ pesan+=`${i+1}. ${item.nama} x${item.qty}%0A`;
 pesan+=`Total: ${total}`;
 window.open("https://wa.me/6283172766800?text="+pesan);
 }
+
+/* GRAFIK REALTIME (SIMULASI) */
+const ctx = document.getElementById('grafikEmas');
+
+let chart = new Chart(ctx, {
+type: 'line',
+data: {
+labels: [],
+datasets: [{
+label: 'Harga Emas (Rp)',
+data: [],
+borderWidth: 3,
+tension: 0.4,
+fill: true
+}]
+},
+options: {
+plugins:{legend:{labels:{color:'white'}}},
+scales:{
+x:{ticks:{color:'white'}},
+y:{ticks:{color:'white'}}
+}
+}
+});
+
+function ambilHargaEmas(){
+let harga = 1450000 + Math.floor(Math.random()*50000);
+let waktu = new Date().toLocaleTimeString();
+
+if(chart.data.labels.length > 10){
+chart.data.labels.shift();
+chart.data.datasets[0].data.shift();
+}
+
+chart.data.labels.push(waktu);
+chart.data.datasets[0].data.push(harga);
+
+chart.update();
+}
+
+setInterval(ambilHargaEmas,3000);
 </script>
 
 </body>
-</html>
+  </html>
