@@ -8,7 +8,6 @@
 <title>Toko Emas ANTAM Official</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <style>
@@ -16,168 +15,66 @@
 html{scroll-behavior:smooth;}
 body{background:#0b0b0b;color:#fff}
 
-.marquee{
-background:gold;
-color:black;
-padding:10px;
-font-weight:bold;
-}
+.marquee{background:gold;color:black;padding:10px;font-weight:bold;}
 
-nav{
-background:#000;
-padding:15px 25px;
-display:flex;
-justify-content:space-between;
-}
-
+nav{background:#000;padding:15px 25px;display:flex;justify-content:space-between;}
 nav h2{color:#d4af37}
 
-#cartCount{
-background:red;
-border-radius:50%;
-padding:2px 7px;
-font-size:12px;
-}
+#cartCount{background:red;border-radius:50%;padding:2px 7px;font-size:12px;}
 
 .hero{
-height:90vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
+height:90vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;
 background:linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.95)),
 url('https://images.unsplash.com/photo-1610375461246-83df859d849d');
 background-size:cover;
 }
 
 .logo img{
-width:180px;
-border-radius:50%;
-box-shadow:0 0 60px gold;
-animation:putar 6s linear infinite;
+width:180px;border-radius:50%;box-shadow:0 0 60px gold;animation:putar 6s linear infinite;
 }
 
-@keyframes putar{
-from{transform:rotate(0deg);}
-to{transform:rotate(360deg);}
-}
+@keyframes putar{from{transform:rotate(0deg);}to{transform:rotate(360deg);}}
 
 .hero h1{color:#d4af37}
 
 .btn{
-background:#25D366;
-padding:12px 25px;
-border-radius:10px;
-color:#fff;
-text-decoration:none;
-display:inline-block;
-margin-top:15px;
+background:#25D366;padding:12px 25px;border-radius:10px;color:#fff;text-decoration:none;display:inline-block;margin-top:15px;
 }
 
 .section{padding:60px 20px;max-width:1100px;margin:auto}
 .section h2{text-align:center;color:#d4af37;margin-bottom:25px}
 
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:20px;
-}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;}
 
-.card{
-background:#141414;
-padding:20px;
-border-radius:15px;
-transition:0.3s;
-}
+.card{background:#141414;padding:20px;border-radius:15px;transition:0.3s;}
+.card:hover{transform:translateY(-5px);box-shadow:0 0 15px gold;}
 
-.card:hover{
-transform:translateY(-5px);
-box-shadow:0 0 15px gold;
-}
+.card img{width:100%;border-radius:10px;border:2px solid gold;cursor:pointer;}
 
-/* TAMBAHAN: BORDER & CURSOR */
-.card img{
-width:100%;
-border-radius:10px;
-border:2px solid gold;
-cursor:pointer;
-}
-
-/* TAMBAHAN: MODAL ZOOM */
 .modal{
-display:none;
-position:fixed;
-z-index:2000;
-left:0;top:0;
-width:100%;height:100%;
-background:rgba(0,0,0,0.9);
-justify-content:center;
-align-items:center;
+display:none;position:fixed;z-index:2000;left:0;top:0;width:100%;height:100%;
+background:rgba(0,0,0,0.9);justify-content:center;align-items:center;
 }
-.modal img{
-max-width:90%;
-border-radius:20px;
-}
+.modal img{max-width:90%;border-radius:20px;}
 
-.market{
-padding:40px 20px;
-text-align:center;
-}
+.market{padding:40px 20px;text-align:center;}
 
-.testimoni-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:20px;
-}
-
-.testi-card{
-background:#141414;
-padding:20px;
-border-radius:15px;
-}
-
+.testimoni-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;}
+.testi-card{background:#141414;padding:20px;border-radius:15px;}
 .testi-name{color:#d4af37}
 .stars{color:gold;margin:5px 0}
 
-.payment{
-background:#111;
-padding:25px;
-border-radius:15px;
-text-align:center;
-}
+.payment{background:#111;padding:25px;border-radius:15px;text-align:center;}
 
-iframe{
-width:100%;
-height:300px;
-border:0;
-border-radius:10px;
-margin-top:20px;
-}
+iframe{width:100%;height:300px;border:0;border-radius:10px;margin-top:20px;}
 
 .wa{
-position:fixed;
-bottom:20px;
-right:20px;
-background:#25D366;
-padding:15px;
-border-radius:50%;
-color:white;
-text-decoration:none;
+position:fixed;bottom:20px;right:20px;background:#25D366;padding:15px;border-radius:50%;color:white;text-decoration:none;
 }
 
-canvas{
-background:#141414;
-padding:15px;
-border-radius:15px;
-}
+canvas{background:#141414;padding:15px;border-radius:15px;}
 
-footer{
-background:#000;
-text-align:center;
-padding:20px;
-margin-top:40px;
-}
+footer{background:#000;text-align:center;padding:20px;margin-top:40px;}
 </style>
 
 </head>
@@ -235,23 +132,28 @@ margin-top:40px;
 
 <div class="grid">
 
-<!-- HANYA GANTI GAMBAR -->
-<div class="card">
-<img src="https://upload.wikimedia.org/wikipedia/commons/3/3b/Gold_bar_1g_Antam.jpg" onclick="zoom(this)">
+<div class="card" onclick="beliLangsung('Antam 0.5 Gram',785000)">
+<img src="https://upload.wikimedia.org/wikipedia/commons/3/3b/Gold_bar_1g_Antam.jpg" onclick="zoom(this);event.stopPropagation();">
 <h4>Antam 0.5 Gram</h4>
 <p>Rp785.000</p>
 </div>
 
-<div class="card">
-<img src="https://upload.wikimedia.org/wikipedia/commons/3/3b/Gold_bar_1g_Antam.jpg" onclick="zoom(this)">
+<div class="card" onclick="beliLangsung('Antam 1 Gram',1460000)">
+<img src="https://upload.wikimedia.org/wikipedia/commons/3/3b/Gold_bar_1g_Antam.jpg" onclick="zoom(this);event.stopPropagation();">
 <h4>Antam 1 Gram</h4>
 <p>Rp1.460.000</p>
 </div>
 
-<div class="card">
-<img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Gold_bar_Antam_5g.jpg" onclick="zoom(this)">
+<div class="card" onclick="beliLangsung('Antam 5 Gram',7050000)">
+<img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Gold_bar_Antam_5g.jpg" onclick="zoom(this);event.stopPropagation();">
 <h4>Antam 5 Gram</h4>
 <p>Rp7.050.000</p>
+</div>
+
+<div class="card" onclick="beliLangsung('Antam 10 Gram',14000000)">
+<img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/Gold_bar_Antam_10g.jpg" onclick="zoom(this);event.stopPropagation();">
+<h4>Antam 10 Gram</h4>
+<p>Rp14.000.000</p>
 </div>
 
 </div>
@@ -262,68 +164,21 @@ margin-top:40px;
 <canvas id="grafikEmas"></canvas>
 </section>
 
-<section class="section">
-<h2>Pembayaran</h2>
-<div class="payment">
-<p><b>BNI - 2008767103</b></p>
-<p>a.n M ILHAM SIRAIT</p>
-<img src="qris.png" width="200">
-</div>
-</section>
-
-<section class="section">
-<h2>Testimoni Pelanggan</h2>
-
-<div class="testimoni-grid">
-<div class="testi-card">
-<div class="testi-name">Andi</div>
-<div class="stars">★★★★★</div>
-<p>Pengiriman cepat & aman</p>
-</div>
-
-<div class="testi-card">
-<div class="testi-name">Siti</div>
-<div class="stars">★★★★★</div>
-<p>Admin ramah dan terpercaya</p>
-</div>
-
-<div class="testi-card">
-<div class="testi-name">Rudi</div>
-<div class="stars">★★★★★</div>
-<p>Harga terbaik dan resmi</p>
-</div>
-</div>
-</section>
-
-<section class="section">
-<h2>Alamat Toko</h2>
-
-<p style="text-align:center;">
-Jl. Pemuda No.1, RT.2/RW.7, Rawamangun, Kec. Pulo Gadung,
-Kota Jakarta Timur, DKI Jakarta
-</p>
-
-<iframe src="https://www.google.com/maps?q=Jl.+Pemuda+No.1+Rawamangun+Jakarta+Timur&output=embed"></iframe>
-</section>
-
 <footer>© 2026 Toko Emas ANTAM</footer>
 
 <a class="wa" href="https://wa.me/6283172766800">WA</a>
 
-<!-- MODAL ZOOM -->
 <div class="modal" id="modal" onclick="this.style.display='none'">
 <img id="modalImg">
 </div>
 
 <script>
 
-/* ZOOM */
 function zoom(img){
 document.getElementById("modal").style.display="flex";
 document.getElementById("modalImg").src=img.src;
 }
 
-/* SEMUA SCRIPT ASLI KAMU TIDAK DIUBAH */
 let cart=[];
 
 function rupiah(a){return "Rp"+a.toLocaleString("id-ID");}
@@ -351,6 +206,13 @@ if(item){item.qty++;}else{cart.push({nama,harga,qty:1});}
 
 updateCart();
 alert("Produk berhasil ditambahkan");
+}
+
+function beliLangsung(nama,harga){
+let item=cart.find(p=>p.nama===nama);
+if(item){item.qty++;}else{cart.push({nama,harga,qty:1});}
+updateCart();
+alert(nama+" ditambahkan ke keranjang");
 }
 
 function checkoutWA(){
