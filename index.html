@@ -7,198 +7,237 @@
 <title>Toko Emas ANTAM Official</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:'Poppins',sans-serif;
-}
 
 body{
-  background: radial-gradient(circle at top, #1a1a1a, #000);
-  color:white;
+margin:0;
+font-family:'Poppins',sans-serif;
+background:linear-gradient(135deg,#000,#1a1a1a);
+color:#fff;
 }
 
-/* NAVBAR */
-nav{
-  background: rgba(0,0,0,0.85);
-  backdrop-filter: blur(10px);
-  padding:15px;
-  text-align:center;
-  border-bottom:1px solid rgba(255,215,0,0.2);
+/* HEADER */
+header{
+background:linear-gradient(90deg,#ffd700,#c9a227);
+color:#000;
+padding:20px;
+text-align:center;
+font-weight:bold;
+font-size:22px;
 }
 
-nav h1{
-  color:#ffd700;
-  letter-spacing:2px;
+/* RUNNING TEXT */
+marquee{
+background:#000;
+color:#ffd700;
+padding:10px;
 }
 
 /* HERO */
 .hero{
-  text-align:center;
-  padding:60px 20px;
+text-align:center;
+padding:30px;
 }
 
-.hero h2{
-  font-size:30px;
-  color:#ffd700;
+.hero h1{
+color:#ffd700;
 }
 
-.hero p{
-  margin-top:10px;
-  color:#ccc;
+/* CONTAINER */
+.container{
+padding:20px;
 }
 
-/* GRID */
-.grid{
-  display:grid;
-  grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
-  gap:20px;
-  padding:20px;
-}
-
+/* CARD */
 .card{
-  background: rgba(255,255,255,0.05);
-  border-radius:15px;
-  padding:15px;
-  text-align:center;
-  transition:0.3s;
-  border:1px solid rgba(255,215,0,0.2);
+background:rgba(255,255,255,0.05);
+border-radius:15px;
+padding:20px;
+margin-bottom:20px;
+box-shadow:0 0 20px rgba(255,215,0,0.2);
 }
 
-.card:hover{
-  transform:translateY(-6px);
-  box-shadow:0 0 25px rgba(255,215,0,0.35);
+/* GRID PRODUK */
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+gap:15px;
 }
 
-.card img{
-  width:100%;
-  border-radius:10px;
+.produk{
+background:#111;
+padding:10px;
+border-radius:10px;
+text-align:center;
+transition:0.3s;
+}
+
+.produk:hover{
+transform:scale(1.05);
+box-shadow:0 0 20px gold;
+}
+
+.produk img{
+width:100%;
+border-radius:10px;
+}
+
+.harga{
+color:#ffd700;
+font-weight:bold;
 }
 
 /* BUTTON */
 .btn{
-  display:inline-block;
-  margin-top:10px;
-  padding:10px 20px;
-  background: linear-gradient(45deg,#ffd700,#b8860b);
-  color:black;
-  border-radius:30px;
-  text-decoration:none;
-  font-weight:bold;
+background:linear-gradient(90deg,#ffd700,#c9a227);
+padding:10px;
+border:none;
+border-radius:8px;
+font-weight:bold;
+cursor:pointer;
 }
 
 /* FORM */
-.form{
-  padding:30px;
+input{
+width:100%;
+padding:10px;
+margin-top:10px;
+border-radius:8px;
+border:none;
 }
 
-.form input, .form select{
-  width:100%;
-  padding:12px;
-  margin-top:10px;
-  border:none;
-  border-radius:8px;
-}
-
-.form button{
-  margin-top:15px;
-  width:100%;
-  padding:12px;
-  background:gold;
-  border:none;
-  border-radius:10px;
-  font-weight:bold;
-  cursor:pointer;
+/* WA FLOAT */
+.wa{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+padding:15px;
+border-radius:50%;
 }
 
 /* FOOTER */
 footer{
-  text-align:center;
-  padding:20px;
-  background:#000;
-  margin-top:40px;
-  border-top:1px solid rgba(255,215,0,0.2);
+text-align:center;
+padding:20px;
+color:#aaa;
 }
+
 </style>
 </head>
 
 <body>
 
-<nav>
-  <h1>ANTAM OFFICIAL GOLD</h1>
-</nav>
+<header>TOKO EMAS ANTAM OFFICIAL</header>
 
-<section class="hero">
-  <h2>Investasi Emas Aman & Resmi</h2>
-  <p>Emas ANTAM 100% Original + Sertifikat CertiCard</p>
-</section>
+<marquee>Harga emas mengikuti pasar dunia | COD seluruh Indonesia | 100% ORIGINAL ANTAM</marquee>
 
-<!-- PRODUK (FOTO KAMU) -->
-<section class="grid">
+<div class="hero">
+<h1>Investasi Emas Premium</h1>
+<p>Aman • Bersertifikat • Terpercaya</p>
+<button class="btn" onclick="wa()">Beli Sekarang</button>
+</div>
 
-  <div class="card">
-    <img src="https://i.imgur.com/wEsVDM5.jpg">
-    <h3>Emas ANTAM Asli</h3>
-    <p>CertiCard Resmi</p>
-    <a class="btn" href="https://wa.me/6283172766800?text=Saya%20mau%20emas%20ini">Beli Sekarang</a>
-  </div>
+<div class="container">
 
-  <div class="card">
-    <img src="https://i.imgur.com/dehRWYp.jpg">
-    <h3>Logam Mulia ANTAM</h3>
-    <p>100% Original</p>
-    <a class="btn" href="https://wa.me/6283172766800?text=Saya%20tertarik%20emas%20ini">Beli Sekarang</a>
-  </div>
+<!-- PRODUK -->
+<div class="card">
+<h2>💎 Produk Emas ANTAM</h2>
 
-  <div class="card">
-    <img src="https://i.imgur.com/Ddiu4PP.jpg">
-    <h3>Emas Batangan</h3>
-    <p>Siap Kirim</p>
-    <a class="btn" href="https://wa.me/6283172766800?text=Order%20emas%20ANTAM">Beli Sekarang</a>
-  </div>
+<div class="grid">
 
-  <div class="card">
-    <img src="https://i.imgur.com/AsjoHVI.jpg">
-    <h3>Emas ANTAM Premium</h3>
-    <p>Garansi Resmi</p>
-    <a class="btn" href="https://wa.me/6283172766800?text=Saya%20mau%20info%20emas">Beli Sekarang</a>
-  </div>
+<div class="produk">
+<img src="https://i.imgur.com/placeholder1.jpg">
+<p>0.5 Gram</p>
+<p class="harga">Rp 1.500.000</p>
+<button class="btn" onclick="beli('0.5 gram')">Beli</button>
+</div>
 
-</section>
+<div class="produk">
+<img src="https://i.imgur.com/placeholder2.jpg">
+<p>1 Gram</p>
+<p class="harga">Rp 2.800.000</p>
+<button class="btn" onclick="beli('1 gram')">Beli</button>
+</div>
 
-<!-- FORM PEMBELIAN -->
-<section class="form">
-  <h2>Form Pembelian Resmi</h2>
+<div class="produk">
+<img src="https://i.imgur.com/placeholder3.jpg">
+<p>5 Gram</p>
+<p class="harga">Rp 14.060.000</p>
+<button class="btn" onclick="beli('5 gram')">Beli</button>
+</div>
 
-  <input type="text" id="nama" placeholder="Nama Lengkap">
-  <input type="text" id="alamat" placeholder="Alamat Pengiriman">
+<div class="produk">
+<img src="https://i.imgur.com/placeholder4.jpg">
+<p>1 Gram Premium</p>
+<p class="harga">Rp 2.900.000</p>
+<button class="btn" onclick="beli('1 gram premium')">Beli</button>
+</div>
 
-  <select id="produk">
-    <option>Pilih Produk</option>
-    <option>Emas ANTAM</option>
-  </select>
+</div>
+</div>
 
-  <button onclick="kirimWA()">Kirim Pesanan via WhatsApp</button>
-</section>
+<!-- FORM -->
+<div class="card">
+<h2>📝 Form Pembelian</h2>
+<input type="text" id="nama" placeholder="Nama">
+<input type="text" id="alamat" placeholder="Alamat">
+<button class="btn" onclick="kirim()">Kirim ke WhatsApp</button>
+</div>
 
-<footer>
-  <p>Alamat: Gedung ANTAM Jakarta</p>
-  <p>Legalitas Resmi • Sertifikat CertiCard</p>
-  <p>WhatsApp: 0831-7276-6800</p>
-</footer>
+<!-- GRAFIK -->
+<div class="card">
+<h2>📊 Grafik Harga</h2>
+<canvas id="chart"></canvas>
+</div>
+
+<!-- LEGAL -->
+<div class="card">
+<h2>📜 Legalitas</h2>
+<p>✔ Produk Resmi ANTAM</p>
+<p>✔ Bersertifikat</p>
+<p>✔ Aman & Terpercaya</p>
+</div>
+
+</div>
+
+<footer>© 2026 Toko Emas ANTAM Official</footer>
+
+<a href="#" class="wa" onclick="wa()">💬</a>
 
 <script>
-function kirimWA(){
-  var nama = document.getElementById("nama").value;
-  var alamat = document.getElementById("alamat").value;
-  var produk = document.getElementById("produk").value;
 
-  var pesan = `Halo, saya ingin membeli emas ANTAM:%0A
-Nama: ${nama}%0A
-Alamat: ${alamat}%0A
-Produk: ${produk}`;
+function wa(){
+window.open("https://wa.me/6283172766800");
+}
 
-  window.open("https://wa.me/6283172766800?text=" + pesan, "_blank
+function beli(nama){
+window.open("https://wa.me/6283172766800?text=Saya ingin beli "+nama);
+}
+
+function kirim(){
+let nama = document.getElementById("nama").value;
+let alamat = document.getElementById("alamat").value;
+
+let text = "Order Emas%0A Nama: "+nama+"%0A Alamat: "+alamat;
+window.open("https://wa.me/6283172766800?text="+text);
+}
+
+/* GRAFIK */
+new Chart(document.getElementById("chart"),{
+type:'line',
+data:{
+labels:['Sen','Sel','Rab','Kam','Jum','Sab','Min'],
+datasets:[{
+data:[2800,2850,2900,2950,3000,3050,3100],
+borderWidth:2
+}]
+}
+});
+
+</script>
+
+</body>
+  </html>
