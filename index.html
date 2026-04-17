@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -9,345 +8,197 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins;}
-html{scroll-behavior:smooth;}
-body{background:#0b0b0b;color:#fff}
-
-.marquee{
-background:gold;
-color:black;
-padding:10px;
-font-weight:bold;
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
 }
 
+body{
+  background: radial-gradient(circle at top, #1a1a1a, #000);
+  color:white;
+}
+
+/* NAVBAR */
 nav{
-background:#000;
-padding:15px 25px;
-display:flex;
-justify-content:space-between;
+  background: rgba(0,0,0,0.85);
+  backdrop-filter: blur(10px);
+  padding:15px;
+  text-align:center;
+  border-bottom:1px solid rgba(255,215,0,0.2);
 }
 
-nav h2{color:#d4af37}
-
-#cartCount{
-background:red;
-border-radius:50%;
-padding:2px 7px;
-font-size:12px;
+nav h1{
+  color:#ffd700;
+  letter-spacing:2px;
 }
 
+/* HERO */
 .hero{
-height:90vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
-background:linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.95)),
-url('https://images.unsplash.com/photo-1610375461246-83df859d849d');
-background-size:cover;
+  text-align:center;
+  padding:60px 20px;
 }
 
-.logo img{
-width:180px;
-border-radius:50%;
-box-shadow:0 0 60px gold;
-animation:putar 6s linear infinite;
+.hero h2{
+  font-size:30px;
+  color:#ffd700;
 }
 
-@keyframes putar{
-from{transform:rotate(0deg);}
-to{transform:rotate(360deg);}
+.hero p{
+  margin-top:10px;
+  color:#ccc;
 }
 
-.hero h1{color:#d4af37}
-
-.btn{
-background:#25D366;
-padding:12px 25px;
-border-radius:10px;
-color:#fff;
-text-decoration:none;
-display:inline-block;
-margin-top:15px;
-}
-
-.section{padding:60px 20px;max-width:1100px;margin:auto}
-.section h2{text-align:center;color:#d4af37;margin-bottom:25px}
-
+/* GRID */
 .grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:20px;
+  display:grid;
+  grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;
+  padding:20px;
 }
 
 .card{
-background:#141414;
-padding:20px;
-border-radius:15px;
-transition:0.3s;
+  background: rgba(255,255,255,0.05);
+  border-radius:15px;
+  padding:15px;
+  text-align:center;
+  transition:0.3s;
+  border:1px solid rgba(255,215,0,0.2);
 }
 
 .card:hover{
-transform:translateY(-5px);
-box-shadow:0 0 15px gold;
+  transform:translateY(-6px);
+  box-shadow:0 0 25px rgba(255,215,0,0.35);
 }
 
 .card img{
-width:100%;
-border-radius:10px;
-border:2px solid gold;
-cursor:pointer;
+  width:100%;
+  border-radius:10px;
 }
 
-.modal{
-display:none;
-position:fixed;
-z-index:2000;
-left:0;top:0;
-width:100%;height:100%;
-background:rgba(0,0,0,0.9);
-justify-content:center;
-align-items:center;
-}
-.modal img{
-max-width:90%;
-border-radius:20px;
+/* BUTTON */
+.btn{
+  display:inline-block;
+  margin-top:10px;
+  padding:10px 20px;
+  background: linear-gradient(45deg,#ffd700,#b8860b);
+  color:black;
+  border-radius:30px;
+  text-decoration:none;
+  font-weight:bold;
 }
 
-.market{
-padding:40px 20px;
-text-align:center;
+/* FORM */
+.form{
+  padding:30px;
 }
 
-.testimoni-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:20px;
+.form input, .form select{
+  width:100%;
+  padding:12px;
+  margin-top:10px;
+  border:none;
+  border-radius:8px;
 }
 
-.testi-card{
-background:#141414;
-padding:20px;
-border-radius:15px;
+.form button{
+  margin-top:15px;
+  width:100%;
+  padding:12px;
+  background:gold;
+  border:none;
+  border-radius:10px;
+  font-weight:bold;
+  cursor:pointer;
 }
 
-.testi-name{color:#d4af37}
-.stars{color:gold;margin:5px 0}
-
-.payment{
-background:#111;
-padding:25px;
-border-radius:15px;
-text-align:center;
-}
-
-iframe{
-width:100%;
-height:300px;
-border:0;
-border-radius:10px;
-margin-top:20px;
-}
-
-.wa{
-position:fixed;
-bottom:20px;
-right:20px;
-background:#25D366;
-padding:15px;
-border-radius:50%;
-color:white;
-text-decoration:none;
-}
-
-canvas{
-background:#141414;
-padding:15px;
-border-radius:15px;
-}
-
+/* FOOTER */
 footer{
-background:#000;
-text-align:center;
-padding:20px;
-margin-top:40px;
+  text-align:center;
+  padding:20px;
+  background:#000;
+  margin-top:40px;
+  border-top:1px solid rgba(255,215,0,0.2);
 }
 </style>
-
 </head>
 
 <body>
 
-<div class="marquee">
-<marquee>🔥 PROMO EMAS HARI INI 🔥 Harga Murah • Aman • Terpercaya 🔥</marquee>
-</div>
-
 <nav>
-<h2>ANTAM GOLD</h2>
-<div>🛒 <span id="cartCount">0</span></div>
+  <h1>ANTAM OFFICIAL GOLD</h1>
 </nav>
 
 <section class="hero">
-<div class="logo">
-<img src="logo.png">
-</div>
-
-<h1>Toko Emas ANTAM Official</h1>
-<p>Investasi Aman • Terpercaya • Resmi</p>
-
-<a class="btn" href="https://wa.me/6283172766800">Chat WhatsApp</a>
+  <h2>Investasi Emas Aman & Resmi</h2>
+  <p>Emas ANTAM 100% Original + Sertifikat CertiCard</p>
 </section>
 
-<section class="section">
-<h2>Order Emas</h2>
+<!-- PRODUK (FOTO KAMU) -->
+<section class="grid">
 
-<div class="grid">
+  <div class="card">
+    <img src="https://i.imgur.com/wEsVDM5.jpg">
+    <h3>Emas ANTAM Asli</h3>
+    <p>CertiCard Resmi</p>
+    <a class="btn" href="https://wa.me/6283172766800?text=Saya%20mau%20emas%20ini">Beli Sekarang</a>
+  </div>
 
-<div class="card">
-<h3>Pilih Gramasi</h3>
-<select id="gram">
-<option value="785000">0.5 Gram - Rp785.000</option>
-<option value="1460000">1 Gram - Rp1.460.000</option>
-<option value="7050000">5 Gram - Rp7.050.000</option>
-<option value="14000000">10 Gram - Rp14.000.000</option>
-</select>
-<button class="btn" onclick="tambahCart()">Tambah</button>
-</div>
+  <div class="card">
+    <img src="https://i.imgur.com/dehRWYp.jpg">
+    <h3>Logam Mulia ANTAM</h3>
+    <p>100% Original</p>
+    <a class="btn" href="https://wa.me/6283172766800?text=Saya%20tertarik%20emas%20ini">Beli Sekarang</a>
+  </div>
 
-<div class="card">
-<h3>Keranjang</h3>
-<div id="cartItems"></div>
-<h3>Total: <span id="totalHarga">Rp0</span></h3>
-<button class="btn" onclick="checkoutWA()">Checkout</button>
-</div>
+  <div class="card">
+    <img src="https://i.imgur.com/Ddiu4PP.jpg">
+    <h3>Emas Batangan</h3>
+    <p>Siap Kirim</p>
+    <a class="btn" href="https://wa.me/6283172766800?text=Order%20emas%20ANTAM">Beli Sekarang</a>
+  </div>
 
-</div>
+  <div class="card">
+    <img src="https://i.imgur.com/AsjoHVI.jpg">
+    <h3>Emas ANTAM Premium</h3>
+    <p>Garansi Resmi</p>
+    <a class="btn" href="https://wa.me/6283172766800?text=Saya%20mau%20info%20emas">Beli Sekarang</a>
+  </div>
+
 </section>
 
-<section class="market">
-<h2>Produk Emas</h2>
+<!-- FORM PEMBELIAN -->
+<section class="form">
+  <h2>Form Pembelian Resmi</h2>
 
-<div class="grid">
+  <input type="text" id="nama" placeholder="Nama Lengkap">
+  <input type="text" id="alamat" placeholder="Alamat Pengiriman">
 
-<div class="card" onclick="beliLangsung('Antam 0.5 Gram',785000)">
-<img src="https://upload.wikimedia.org/wikipedia/commons/3/3b/Gold_bar_1g_Antam.jpg" onclick="zoom(this);event.stopPropagation();">
-<h4>Antam 0.5 Gram</h4>
-<p>Rp785.000</p>
-</div>
+  <select id="produk">
+    <option>Pilih Produk</option>
+    <option>Emas ANTAM</option>
+  </select>
 
-<div class="card" onclick="beliLangsung('Antam 1 Gram',1460000)">
-<img src="https://upload.wikimedia.org/wikipedia/commons/3/3b/Gold_bar_1g_Antam.jpg" onclick="zoom(this);event.stopPropagation();">
-<h4>Antam 1 Gram</h4>
-<p>Rp1.460.000</p>
-</div>
-
-<div class="card" onclick="beliLangsung('Antam 5 Gram',7050000)">
-<img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Gold_bar_Antam_5g.jpg" onclick="zoom(this);event.stopPropagation();">
-<h4>Antam 5 Gram</h4>
-<p>Rp7.050.000</p>
-</div>
-
-<!-- TAMBAHAN TANPA MENGHAPUS -->
-<div class="card" onclick="beliLangsung('Antam 10 Gram',14000000)">
-<img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/Gold_bar_Antam_10g.jpg" onclick="zoom(this);event.stopPropagation();">
-<h4>Antam 10 Gram</h4>
-<p>Rp14.000.000</p>
-</div>
-
-</div>
+  <button onclick="kirimWA()">Kirim Pesanan via WhatsApp</button>
 </section>
 
-<!-- SEMUA BAGIAN ASLI KAMU TETAP -->
-
-<section class="section">
-<h2>Grafik Harga Emas Real-Time</h2>
-<canvas id="grafikEmas"></canvas>
-</section>
-
-<section class="section">
-<h2>Pembayaran</h2>
-<div class="payment">
-<p><b>BNI - 2008767103</b></p>
-<p>a.n M ILHAM SIRAIT</p>
-<img src="qris.png" width="200">
-</div>
-</section>
-
-<section class="section">
-<h2>Testimoni Pelanggan</h2>
-
-<div class="testimoni-grid">
-<div class="testi-card">
-<div class="testi-name">Andi</div>
-<div class="stars">★★★★★</div>
-<p>Pengiriman cepat & aman</p>
-</div>
-
-<div class="testi-card">
-<div class="testi-name">Siti</div>
-<div class="stars">★★★★★</div>
-<p>Admin ramah dan terpercaya</p>
-</div>
-
-<div class="testi-card">
-<div class="testi-name">Rudi</div>
-<div class="stars">★★★★★</div>
-<p>Harga terbaik dan resmi</p>
-</div>
-</div>
-</section>
-
-<section class="section">
-<h2>Alamat Toko</h2>
-
-<p style="text-align:center;">
-Jl. Pemuda No.1, RT.2/RW.7, Rawamangun, Kec. Pulo Gadung,
-Kota Jakarta Timur, DKI Jakarta
-</p>
-
-<iframe src="https://www.google.com/maps?q=Jl.+Pemuda+No.1+Rawamangun+Jakarta+Timur&output=embed"></iframe>
-</section>
-
-<footer>© 2026 Toko Emas ANTAM</footer>
-
-<a class="wa" href="https://wa.me/6283172766800">WA</a>
-
-<div class="modal" id="modal" onclick="this.style.display='none'">
-<img id="modalImg">
-</div>
+<footer>
+  <p>Alamat: Gedung ANTAM Jakarta</p>
+  <p>Legalitas Resmi • Sertifikat CertiCard</p>
+  <p>WhatsApp: 0831-7276-6800</p>
+</footer>
 
 <script>
+function kirimWA(){
+  var nama = document.getElementById("nama").value;
+  var alamat = document.getElementById("alamat").value;
+  var produk = document.getElementById("produk").value;
 
-function zoom(img){
-document.getElementById("modal").style.display="flex";
-document.getElementById("modalImg").src=img.src;
-}
+  var pesan = `Halo, saya ingin membeli emas ANTAM:%0A
+Nama: ${nama}%0A
+Alamat: ${alamat}%0A
+Produk: ${produk}`;
 
-let cart=[];
-
-function rupiah(a){return "Rp"+a.toLocaleString("id-ID");}
-
-function updateCart(){
-let total=0,jumlah=0;
-let c=document.getElementById("cartItems");
-c.innerHTML="";
-cart.forEach((item)=>{
-total+=item.harga*item.qty;
-jumlah+=item.qty;
-c.innerHTML+=`<div>${item.nama} x${item.qty}</div>`;
-});
-document.getElementById("totalHarga").innerText=rupiah(total);
-document.getElementById("cartCount").innerText=jumlah;
-}
-
-function tambahCart(){
-let s=document.getElementById("gram");
-let nama=s.options[s.selectedIndex].text;
-let harga=parseInt(s.value);
-
-let item=cart.find(p=>p.nama===nama);
-if(item){item.qty++;}else{cart
+  window.open("https://wa.me/6283172766800?text=" + pesan, "_blank
